@@ -1,6 +1,6 @@
 FROM alpine:3.10
-LABEL "repository"="https://github.com/anothrNick/github-tag-action"
-LABEL "homepage"="https://github.com/anothrNick/github-tag-action"
+LABEL "repository"="https://github.com/praveenb1988/labeler-commit"
+LABEL "homepage"="https://github.com/praveenb1988/labeler-commit"
 LABEL "maintainer"="Praveenb1988"
 
 COPY entrypoint.sh /entrypoint.sh
