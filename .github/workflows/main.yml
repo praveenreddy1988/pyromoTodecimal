@@ -11,7 +11,7 @@ jobs:
       with:
         fetch-depth: '0'
     - name: Bump version and push tag
-      uses: praveenb1988/labeler-commit
+      uses: praveenb1988/labeler-commit@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: false
