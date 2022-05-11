@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile  my-image-romoTodecimal
+      run: docker build . --file Dockerfile --tag  my-image-romoTodecimal:$(date +%s)
     - run: |
         #mkdir pathupload
         echo "artifactPath=${{ github.workspace }}" >> $GITHUB_ENV
