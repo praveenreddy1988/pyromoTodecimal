@@ -15,10 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag my-image-romoTodecimal
     - run: |
         #mkdir pathupload
-        echo "artifactPath=${{ github.workspace }}/file.txt" >> $GITHUB_ENV
+        echo "artifactPath=${{ github.workspace }}" >> $GITHUB_ENV
     - name: Upload Docker image Artifact
       uses: actions/upload-artifact@v3
       with:
