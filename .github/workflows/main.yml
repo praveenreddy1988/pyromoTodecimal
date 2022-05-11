@@ -7,6 +7,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    #- uses: actions/checkout@master
-      - name: Build docker file
-        run: docker build -t mypyimage .
+      - uses: actions/checkout@v2 # first action check out:source code
+      - name: Build the docker image
+        run: docker build -t . --file Dockerfile --tag mypyromoimage
