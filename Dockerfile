@@ -1,10 +1,6 @@
-FROM alpine:3.10
-LABEL "repository"="https://github.com/praveenb1988/labeler-commit"
-LABEL "homepage"="https://github.com/praveenb1988/labeler-commit"
-LABEL "maintainer"="Praveenb1988"
+FROM ubuntu
+RUN apt-get update && \
+       apt-get install -y  curl wget  git  python3 python3-pip sudo dos2unix
+ADD roman.py /root/roman.py
+CMD [ "python3","./root/roman.py" ]
 
-COPY entrypoint.sh /entrypoint.sh
-
-RUN apk update && apk add bash git curl jq && apk add --update nodejs npm && npm install -g semver
-
-ENTRYPOINT ["/entrypoint.sh"]
