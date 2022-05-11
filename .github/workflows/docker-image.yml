@@ -17,12 +17,16 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
     - run: |
-        mkdir pathupload
-        echo "artifactPath=pathupload/file.txt" >> $GITHUB_ENV
-    - name: Upload Artifact
+        #mkdir pathupload
+        echo "artifactPath=${{ github.workspace }}/file.txt" >> $GITHUB_ENV
+    - name: Upload Docker image Artifact
       uses: actions/upload-artifact@v3
       with:
+        #Artifactory name
         name: myartifact
+        #a file, dir or wildcard pattern that describes what to upload
         path: ${{ env.artifactPath }}
+        if-no-files-found: error
+        #Duration aft which artifactory will expire
         retention-days: 5
       
