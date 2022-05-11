@@ -20,7 +20,7 @@ jobs:
         mkdir pathupload
         echo "artifactPath=pathupload/file.txt" >> $GITHUB_ENV
     - name: Upload Artifact
-      uses: action/upload-artifact@v3
+      uses: actions/upload-artifact@v3
       with:
         name: myartifact
         path: ${{ env.artifactPath }}
